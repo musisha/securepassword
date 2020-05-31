@@ -1,0 +1,10 @@
+Package    Version
+---------- -------
+asgiref    3.2.7
+Django     3.0.6
+Pillow     7.1.2
+pip        20.1.1
+pytz       2020.1
+setuptools 46.4.0
+sqlparse   0.3.1
+wheel      0.34.2

@@ -1,0 +1,44 @@
+{% extends 'generator/base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="container text-center">
+    <h1>Generate Secure Password Here</h1>
+    <form action="{% url 'password' %}">
+        <select name="length">
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10 char long</option>
+            <option value="11">11 char long</option>
+            <option value="12" selected="selected">12</option>
+            <option value="13">13 char long</option>
+            <option value="14">14 char long</option>
+        </select> Length
+        <br>
+        <input type="checkbox" name="uppercase">Uppercase
+        <br>
+        <input type="checkbox" name="numbers">Numbers
+        <br>
+        <input type="checkbox" name="special">Special Characters
+        <br>
+        <input type="submit" value="Generate_password" class="btn btn-primary">
+    </form>
+</div>
+<br/>
+
+{% for  issue in issue %}
+<h1 class="text-center mt-5" id="blogdetailtitle">{{ issue.name }}</h1>
+    {% if issue.image %}
+
+        <img src="{{ issue.image.url }}" class="img-fluid mb-2"/>
+
+    {% endif %}
+
+<h5 class="text-center text-muted mb-5">{{ issue.date|date:'F jS Y' }}</h5>
+
+{{ issue.body|safe }}
+{% endfor %}
+
+{% endblock content %}
